@@ -1,4 +1,4 @@
-# blog
+# Bem vindo ao meu projeto - Blog
   O layout do projeto foi fornecido pelo Iuri Silva, da CodeLândia. 
 
 # Linguagens utilizadas
