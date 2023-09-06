@@ -1,0 +1,131 @@
+.header {
+    width: 100%;
+    background: $bg-color-gradient1;
+
+    &_container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 73px;
+        max-width: 900px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 41px 0;
+
+        &_wrapper-title {
+            display: flex;
+            justify-content: space-between;
+
+            &_text {
+                font-family: 'Lexend Deca';
+                font-size: 24px;
+                font-weight: 400;
+                color: $white-color1;
+                text-align: right;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+
+        &_wrapper-input {
+            width: 100%;
+
+            &_input {
+                padding: 21px 64px;
+                width: 100%;
+                outline: none;
+                border: none;
+                border-radius: 5px;
+                background-image: url('img/search.svg');
+                background-color: $bg-color-gradient2;
+                background-repeat: no-repeat;
+                background-position: left;
+                background-position-x: 17px;
+                color: $white-color1;
+                text-align: left;
+                font-family: 'Inter';
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                opacity: 0.5;
+
+                &::placeholder {
+                    color: $white-color1;
+                    text-align: left;
+                    font-family: 'Inter';
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+}
+
+.main {
+    background-color: $bg-color2;
+    padding: 100px 0;
+
+    &_wrapper-cards {
+        display: flex;
+        flex-direction: column;
+        row-gap: 50px;
+        max-width: 900px;
+        width: 100%;
+        margin: 25px auto;
+
+        &_li {
+            padding: 23px 25px 23px;
+            border-radius: 5px;
+            background: $white-color1;
+            box-shadow: 0px 0px 10px 0px rgba(19, 19, 31, 0.05);
+
+            &_container-span {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 22px;
+
+                &_date {
+                    color: $gray-color1;
+                    text-align: left;
+                    font-family: 'Lexend Deca';
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+
+                &_button {
+                    width: 25px;
+                    height: 25px;
+                    cursor: pointer;
+                }
+            }
+
+            &_title {
+                color: $blue-color1;
+                text-align: left;
+                font-family: 'Lexend Deca';
+                font-size: 26px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                margin-bottom: 8px;
+            }
+
+            &_description {
+                color: $gray-color1;
+                font-family: 'Lexend Deca';
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 32px;
+            }
+        }
+    }
+}
+

@@ -22,13 +22,18 @@ const paths = {
         main: 'src/scripts/app.js'
     },
 
+    img: {
+        all: 'src/assets/img/**',
+        dest: 'dist/img'
+    },
+
     output: 'dist'
 
 }
 
 function server () {
     connect.server({
-        root: paths.output,
+        root: 'dist',
         livereload: true,
         port: 3000,
     });
@@ -37,6 +42,7 @@ function server () {
 
 function sentinel() {
     watch(paths.html.all, {ignoreInitial: false}, html);
+    watch(paths.img.all, {ignoreInitial: false}, img);
     watch(paths.styles.all, {ignoreInitial: false}, styles);
     watch(paths.scripts.all, {ignoreInitial: false}, scripts);
 }
@@ -44,6 +50,12 @@ function sentinel() {
 function html () {
     return src(paths.html.all).pipe(dest(paths.output));
 }
+
+function img() {
+    return src(paths.img.all)
+        .pipe(dest(paths.img.dest));
+}
+
 
 function styles() {
     return src(paths.styles.main).pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError)).pipe(dest(paths.output)).pipe(connect.reload());
