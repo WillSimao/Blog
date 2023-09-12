@@ -1,5 +1,5 @@
-import  { blog } from './components/blog'
+import  { Blog } from './components/blog'
 
 document.addEventListener("DOMContentLoaded", function() {
-    new blog();
+    new Blog();
 });
