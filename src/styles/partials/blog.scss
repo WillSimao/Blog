@@ -29,19 +29,25 @@
         }
 
         &_wrapper-input {
+            display: flex;
+            align-items: center;
+            column-gap: 17px;
+            padding: 0 17px;
             width: 100%;
+            background-color: $bg-color-gradient2;
+            border-radius: 5px;
+
+            span {
+                display: flex;
+                align-items: center;
+            }
 
             &_input {
-                padding: 21px 64px;
+                padding: 21px 0;
                 width: 100%;
                 outline: none;
+                background: transparent;
                 border: none;
-                border-radius: 5px;
-                background-image: url('img/search.svg');
-                background-color: $bg-color-gradient2;
-                background-repeat: no-repeat;
-                background-position: left;
-                background-position-x: 17px;
                 color: $white-color1;
                 text-align: left;
                 font-family: 'Inter';
@@ -70,6 +76,24 @@
     background-color: $bg-color2;
     padding: 100px 0;
 
+    &_noResult{
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 23px 25px 23px;
+        height: 200px;
+        max-width: 900px;
+        width: 100%;
+        margin: 0 auto;
+        font-family: 'Lexend Deca';
+        font-size: 24px;
+        font-weight: 400;
+        color: $blue-color1;
+        text-align: center;
+        font-style: normal;
+        line-height: normal;
+    }
+
     &_wrapper-cards {
         display: flex;
         flex-direction: column;
@@ -84,7 +108,7 @@
             background: $white-color1;
             box-shadow: 0px 0px 10px 0px rgba(19, 19, 31, 0.05);
 
-            &_container-span {
+            &_container {
                 display: flex;
                 justify-content: space-between;
                 margin-bottom: 22px;
@@ -117,7 +141,7 @@
 
                     #icon.filled,
                     #icon:hover {
-                    fill: #574ae8;
+                        fill: #574ae8;
                     }
                 }
             }
@@ -131,6 +155,11 @@
                 font-weight: 400;
                 line-height: normal;
                 margin-bottom: 8px;
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
 
             &_description {
@@ -149,13 +178,43 @@
     background: linear-gradient(88deg, #574AE8 0%, #3EA1DB 100%);
     height: 100%;
     padding: 50px 10px;
+    height: 248px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    &_container {
-        max-width: 900px;
-        width: 100%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        padding: 50px 0;
+@media only screen and (max-width: 1024px) {
+    .header {
+        padding: 0 15px;
+    }
+    .main {
+        padding: 100px 15px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .main {
+        &_noResult{
+            font-size: 15px;
+        }
+
+        &_wrapper-cards {
+            &_li {
+                &_container {
+                    &_date {
+                        font-size: 15px;
+                    }
+                }
+                &_title {
+                    font-size: 20px;
+                }
+                &_description {
+                    max-height: 12.5rem;
+                    overflow-y: scroll;
+                    font-size: 15px;
+                }
+            }
+        }
     }
 }
